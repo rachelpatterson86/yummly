@@ -1,4 +1,5 @@
 require "yummly/api"
+require "yummly/connection"
 require "yummly/configuration"
 require "yummly/flavor"
 require "yummly/image"
