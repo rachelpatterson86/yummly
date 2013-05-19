@@ -46,7 +46,7 @@ class Yummly::Recipe
 
   # @return [Array] collection of strings of ingredients.
   def ingredients
-    response["ingredients"]
+    response["ingredients"] || ingredient_lines
   end
 
   # @return [Array] collection of strings of ingredients.
