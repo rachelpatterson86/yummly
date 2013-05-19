@@ -51,14 +51,16 @@ The find command returns a single Yummly::Recipe object:
 ## The Recipe object
 
 The Yummly ruby wrapper returns all results as recipe objects. These objects normalize the API responses to make it
-easier for developers to interact with recipes from ruby. All Yummly recipe attributes have been directly mapped, and
-in cases where the JSON response returned an array for a specific attribute and array of related objects are returned
+easier for developers to interact with recipes from ruby. All Yummly recipe attributes have been directly mapped.
+In cases where the JSON response returned an array for a specific attribute, an array of appropriate objects are returned
 from the ruby Recipe object.
 
 For example, to access the thumbnail image for a recipe:
 
     recipe = Yummly.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
     recipe.images.first.small_url
+
+(Shhhh, there's also a Recipe#thumbnail convenience method!)
 
 Explore the Yummly::Recipe class to see the full range of available attributes.
 
