@@ -89,6 +89,12 @@ class Yummly::Recipe
     response["totalTimeInSeconds"]
   end
 
+  def thumbnail
+    if images
+      images.first.small_url
+    end
+  end
+
   private
 
   # The search and find API calls populate different image attribute nodes in their respective responses. This method
