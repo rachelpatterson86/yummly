@@ -8,9 +8,9 @@ Gem::Specification.new do |gem|
   gem.version       = Yummly::VERSION
   gem.authors       = ["Theo Mills"]
   gem.email         = ["twmills@twmills.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Ruby wrapper to the Yummly API}
+  gem.summary       = %q{Ruby wrapper to the Yummly API}
+  gem.homepage      = "https://github.com/twmills/yummly"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
