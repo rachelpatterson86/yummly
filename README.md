@@ -40,13 +40,13 @@ Once configured, you have access to two API calls:
 
 The search command returns an array of Yummly::Recipe objects:
 
-    Yummly::Api.search('Onion soup')
+    Yummly.search('Onion soup')
 
 #### Find
 
 The find command returns a single Yummly::Recipe object:
 
-    Yummly::Api.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
+    Yummly.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
 
 ## The Recipe object
 
@@ -57,7 +57,7 @@ from the ruby Recipe object.
 
 For example, to access the thumbnail image for a recipe:
 
-    recipe = Yummly::Api.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
+    recipe = Yummly.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
     recipe.images.first.small_url
 
 Explore the Yummly::Recipe class to see the full range of available attributes.
