@@ -22,5 +22,13 @@ module Yummly
       yield(configuration)
       self.configuration = configuration
     end
+
+    def search(terms, params = {})
+      Yummly::Api.search(terms, params)
+    end
+
+    def find(recipe_id)
+      Yummly::Api.find(recipe_id)
+    end
   end
 end
