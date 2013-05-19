@@ -9,11 +9,12 @@ class Yummly::Flavor
                 :sourness
 
   def initialize(values)
-    @spiciness = values["spicy"]
-    @bitterness = values["bitter"]
-    @sweetness = values["sweet"]
-    @savoriness = values["meaty"]
-    @sourness = values["sour"]
+    @spiciness = values["Piquant"]
+    @bitterness = values["Bitter"]
+    @sweetness = values["Sweet"]
+    @savoriness = values["Meaty"]
+    @sourness = values["Sour"]
+    @saltiness = values["Salty"]
   end
 
 end
