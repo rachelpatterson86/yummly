@@ -28,7 +28,7 @@ module Yummly
       end
     end
 
-    def build_uri(command, params)
+    def self.build_uri(command, params)
       query_string = self.build_params_query_string(params)
       "/#{self.api_version}/api/#{command}?#{query_string}"
     end
