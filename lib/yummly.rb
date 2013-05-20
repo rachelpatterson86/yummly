@@ -1,6 +1,6 @@
 require "yummly/api"
-require "yummly/connection"
 require "yummly/configuration"
+require "yummly/connection"
 require "yummly/flavor"
 require "yummly/image"
 require "yummly/nutrition_estimate"

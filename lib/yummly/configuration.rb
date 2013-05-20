@@ -13,24 +13,26 @@
 #     config.app_id = "12345"
 #     config.app_key = "XXXXXXXXXXXXXXXXXXXXXXXX"
 #   end
-class Yummly::Configuration
+module Yummly
+  class Configuration
 
-  attr_accessor :app_key,
-                :app_id,
-                :use_ssl
+    attr_accessor :app_key,
+                  :app_id,
+                  :use_ssl
 
-  # Creates a configuration object, defaulting use_ssl to false.
-  def initialize
-    @use_ssl  = false
+    # Creates a configuration object, defaulting use_ssl to false.
+    def initialize
+      @use_ssl = false
+    end
+
+    # Returns true if API calls to Yummly should use SSL.
+    #
+    # @return [Boolean] true if API calls to Yummly should use SSL
+    # @example
+    #   Yummly.configuration.use_ssl?
+    def use_ssl?
+      use_ssl
+    end
+
   end
-
-  # Returns true if API calls to Yummly should use SSL.
-  #
-  # @return [Boolean] true if API calls to Yummly should use SSL
-  # @example
-  #   Yummly.configuration.use_ssl?
-  def use_ssl?
-    use_ssl
-  end
-
 end
