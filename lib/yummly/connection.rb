@@ -21,6 +21,16 @@ class Yummly::Connection
   def self.protocol
     Yummly.configuration.use_ssl? ? 'https' : 'http'
   end
+    def self.parse_response(response)
+      case response.status
+        when 409 then
+          raise Yummly::PermissionError, response.body
+        when 404 then
+          nil
+        when 200 then
+          JSON.parse(response.body)
+      end
+    end
 
   def self.api_version
     Yummly::API_VERSION
