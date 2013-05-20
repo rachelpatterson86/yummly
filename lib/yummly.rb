@@ -31,4 +31,7 @@ module Yummly
       Yummly::Api.find(recipe_id)
     end
   end
+
+  class Error < StandardError; end
+  class PermissionError < Error; end
 end
