@@ -5,7 +5,7 @@ module Yummly
     attr_accessor :connection
 
     def self.get(command, params = {})
-      response = self.api_connection.get(build_uri(command, params))
+      response = self.api_connection.get(self.build_uri(command, params))
       self.parse_response(response)
     end
 
@@ -29,7 +29,7 @@ module Yummly
     end
 
     def build_uri(command, params)
-      query_string = build_params_query_string(params)
+      query_string = self.build_params_query_string(params)
       "/#{self.api_version}/api/#{command}?#{query_string}"
     end
 
