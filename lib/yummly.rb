@@ -8,6 +8,7 @@ require "yummly/recipe"
 require "yummly/source"
 require "yummly/unit"
 require "yummly/version"
+require "faraday"
 
 module Yummly
 
