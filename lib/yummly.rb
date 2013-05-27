@@ -1,3 +1,6 @@
+require "faraday"
+require "rack"
+require "json"
 require "yummly/api"
 require "yummly/configuration"
 require "yummly/connection"
@@ -8,8 +11,6 @@ require "yummly/recipe"
 require "yummly/source"
 require "yummly/unit"
 require "yummly/version"
-require "faraday"
-require "rack"
 
 module Yummly
 
