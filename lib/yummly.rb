@@ -9,6 +9,7 @@ require "yummly/source"
 require "yummly/unit"
 require "yummly/version"
 require "faraday"
+require "rack"
 
 module Yummly
 

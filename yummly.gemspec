@@ -17,5 +17,6 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
   gem.add_dependency('faraday', '>= 0.8.7')
+  gem.add_dependency('rack', "~> 1.5.2")
   gem.add_development_dependency "rspec"
 end
