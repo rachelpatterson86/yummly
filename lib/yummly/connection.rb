@@ -5,12 +5,12 @@ module Yummly
     attr_accessor :connection
 
     def self.get(command, params = {})
-      response = self.api_connection.get(self.build_uri(command, params))
+      response = self.api_connection(self.url).get(self.uri(command, params))
       self.parse_response(response)
     end
 
-    def self.api_connection
-      Faraday.new(:url => "#{self.protocol}://api.yummly.com") do |faraday|
+    def self.api_connection(url)
+      Faraday.new(:url => url) do |faraday|
         faraday.request :url_encoded # form-encode POST params
         faraday.response :logger # log requests to STDOUT
         faraday.adapter Faraday.default_adapter # make requests with Net::HTTP
@@ -28,7 +28,11 @@ module Yummly
       end
     end
 
-    def self.build_uri(command, params)
+    def self.url
+      "#{self.protocol}://api.yummly.com"
+    end
+
+    def self.uri(command, params)
       query_string = self.build_params_query_string(params)
       "/#{self.api_version}/api/#{command}?#{query_string}"
     end
