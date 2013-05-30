@@ -5,8 +5,8 @@ describe Yummly do
 
   describe ".configure" do
 
-    let(:app_id) { "12345" }
-    let(:app_key) { "XEARSGSTH12345789" }
+    let(:app_id) { ENV['YUMMLY_APP_ID'] || "12345" }
+    let(:app_key) { ENV['YUMMLY_APP_KEY'] || "XEARSGSTH12345789" }
 
     before do
       Yummly.configure do |config|
