@@ -25,11 +25,17 @@ module Yummly
           nil
         when 200 then
           JSON.parse(response.body)
+        when 501 then
+          raise Yummly::NotEmplimentedError, response.body
       end
+    end
+    
+    def self.domain
+      "api.yummly.com"
     end
 
     def self.url
-      "#{self.protocol}://api.yummly.com"
+      "#{self.protocol}://#{self.domain}"
     end
 
     def self.uri(command, params)

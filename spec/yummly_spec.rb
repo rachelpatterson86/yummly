@@ -19,6 +19,7 @@ describe Yummly do
     specify { Yummly.configuration.use_ssl?.should be_true }
     specify { Yummly.configuration.app_id.should == app_id }
     specify { Yummly.configuration.app_key.should == app_key }
+    specify { Yummly.search("fried chicken").should be_an_instance_of(Array)}
   end
 
 end

@@ -37,4 +37,5 @@ module Yummly
 
   class Error < StandardError; end
   class PermissionError < Error; end
+  class NotEmplimentedError < Error; end
 end
