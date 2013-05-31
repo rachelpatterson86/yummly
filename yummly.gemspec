@@ -20,4 +20,5 @@ Gem::Specification.new do |gem|
   gem.add_dependency('rack', "~> 1.5.2")
   gem.add_dependency('json', "~> 1.8.0")
   gem.add_development_dependency "rspec"
+  gem.add_development_dependency "webmock"
 end
