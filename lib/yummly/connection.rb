@@ -22,7 +22,8 @@ module Yummly
         when 409 then
           raise Yummly::PermissionError, response.body
         when 404 then
-          nil
+          nil #raise Yummly::NotFoundError, response.body 
+          #TODO check if returning nil is the proper response or raise a NotFoundError
         when 200 then
           JSON.parse(response.body)
         when 501 then
