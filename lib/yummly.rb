@@ -12,6 +12,7 @@ require "yummly/recipe"
 require "yummly/source"
 require "yummly/unit"
 require "yummly/version"
+require "yummly/url_builder"
 
 module Yummly
 
