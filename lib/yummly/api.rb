@@ -25,13 +25,13 @@ module Yummly
     #
     # @param [String] terms A string of terms used to search API
     # @param [Hash] params Additional options to pass to the search API
-    # @return [Array] a collection of recipe objects
+    # @return [Yummly::SearchResult] an enumerable search result object
     # @example
     #   recipes = Yummly::Api.search('Onion soup')
     def self.search(terms, params = {})
       params[:q] = terms unless params.has_key?(:q)
       result = Yummly::Connection.get("recipes", params)
-      result["matches"].collect { |recipe_json| Yummly::Recipe.new(recipe_json) }
+      Yummly::SearchResult.new(result)
     end
 
   end
