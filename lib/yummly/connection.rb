@@ -2,53 +2,36 @@
 module Yummly
   class Connection
 
-    attr_accessor :connection
+    class << self
 
-    def self.get(command, params = {})
-      response = self.api_connection(self.url).get(self.uri(command, params))
-      self.parse_response(response)
-    end
+      attr_writer :adapter
 
-    def self.api_connection(url)
-      Faraday.new(:url => url) do |faraday|
-        faraday.request :url_encoded # form-encode POST params
-        faraday.response :logger # log requests to STDOUT
-        faraday.adapter Faraday.default_adapter # make requests with Net::HTTP
+      def get(command, params = {})
+        response = self.api_connection.get(UrlBuilder.uri(command, params))
+        self.parse_response(response)
       end
-    end
 
-    def self.parse_response(response)
-      case response.status
-        when 409 then
-          raise Yummly::PermissionError, response.body
-        when 404 then
-          nil
-        when 200 then
-          JSON.parse(response.body)
+      def api_connection
+        adapter.connection(UrlBuilder.domain)
       end
-    end
 
-    def self.url
-      "#{self.protocol}://api.yummly.com"
-    end
+      def adapter
+        @adapter || Yummly::FaradayAdapter
+      end
 
-    def self.uri(command, params)
-      query_string = self.build_params_query_string(params)
-      "/#{self.api_version}/api/#{command}?#{query_string}"
-    end
+      def parse_response(response)
+        case response.status
+          when 409 then
+            raise Yummly::PermissionError, response.body
+          when 404 then
+            nil
+          when 200 then
+            JSON.parse(response.body)
+          when 501 then
+            raise Yummly::NotImplementedError, response.body
+        end
+      end
 
-    def self.build_params_query_string(params)
-      params['_app_id'] = Yummly.configuration.app_id
-      params['_app_key'] = Yummly.configuration.app_key
-      Rack::Utils.build_query(params)
-    end
-
-    def self.protocol
-      Yummly.configuration.use_ssl? ? 'https' : 'http'
-    end
-
-    def self.api_version
-      Yummly::API_VERSION
     end
 
   end
