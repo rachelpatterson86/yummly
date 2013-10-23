@@ -23,7 +23,7 @@ module Yummly
     end
 
     def attribution
-      response["attribution"]
+      @attribution ||= Yummly::Attribution.new(response["attribution"])
     end
 
     def description

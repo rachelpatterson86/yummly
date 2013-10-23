@@ -2,15 +2,19 @@ require "faraday"
 require "rack"
 require "json"
 require "yummly/api"
+require "yummly/attribution"
 require "yummly/configuration"
 require "yummly/connection"
+require "yummly/faraday_adapter"
 require "yummly/flavor"
 require "yummly/image"
 require "yummly/nutrition_estimate"
 require "yummly/recipe"
+require "yummly/search_result"
 require "yummly/source"
 require "yummly/unit"
 require "yummly/version"
+require "yummly/url_builder"
 
 module Yummly
 
@@ -38,5 +42,5 @@ module Yummly
   class Error < StandardError; end
   class NotFoundError < Error; end
   class PermissionError < Error; end
-  class NotEmplimentedError < Error; end
+  class NotImplementedError < Error; end
 end
