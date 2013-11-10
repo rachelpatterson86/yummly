@@ -16,7 +16,7 @@ module Yummly
       end
 
       def adapter
-        @adapter || Yummly::FaradayAdapter
+        Yummly.configuration.http_adapter
       end
 
       def parse_response(response)

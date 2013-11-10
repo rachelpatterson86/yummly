@@ -19,10 +19,12 @@ module Yummly
     attr_accessor :app_key,
                   :app_id,
                   :use_ssl,
+                  :http_adapter
 
     # Creates a configuration object, defaulting use_ssl to false.
     def initialize
       @use_ssl = false
+      @http_adapter = Yummly::FaradayAdapter
     end
 
     # Returns true if API calls to Yummly should use SSL.
