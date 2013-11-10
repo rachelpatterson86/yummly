@@ -29,6 +29,8 @@ module Yummly
             JSON.parse(response.body)
           when 501 then
             raise Yummly::NotImplementedError, response.body
+          when 500 then
+            raise Yummly::InternalServerError, "An internal error on the Yummly servers was encountered: #{response.body}"
         end
       end
 
