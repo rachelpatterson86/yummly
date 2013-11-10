@@ -38,10 +38,12 @@ Once configured, you have access to two API calls:
 
 #### Search
 
-The search command returns a Yummly::SearchResult object, which is a customer Enumerable collection of Recipe objects:
+The search command returns a Yummly::SearchResult object, which is a custom Enumerable collection of Recipe objects:
 
     result = Yummly.search('Onion soup')
-    result.total # returns 10
+    result.total # returns 43350
+    result.size # returns 10
+    result.collect { |recipe| recipe.name }
 
 #### Find
 
