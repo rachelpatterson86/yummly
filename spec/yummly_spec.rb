@@ -14,7 +14,6 @@ describe Yummly do
         config.app_key = app_key
       end
 
-      UrlMocks.register_api_url_stubs
     end
 
     specify { Yummly.configuration.use_ssl?.should be_true }
