@@ -6,6 +6,14 @@ describe Yummly::Configuration do
   specify { subject.should respond_to(:app_key) }
   specify { subject.should respond_to(:app_id) }
 
+  describe "http_adapter" do
+    specify { subject.http_adapter.should == Yummly::FaradayAdapter }
+    context "when set" do
+      before { subject.http_adapter = String }
+      specify {subject.http_adapter.should == String}
+    end
+  end
+
   describe "#use_ssl?" do
     specify { subject.use_ssl?.should be_false }
 
