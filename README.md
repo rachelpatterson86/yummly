@@ -38,15 +38,17 @@ Once configured, you have access to two API calls:
 
 #### Search
 
-The search command returns an array of Yummly::Recipe objects:
+The search command returns a Yummly::SearchResult object, which is a customer Enumerable collection of Recipe objects:
 
-    Yummly.search('Onion soup')
+    result = Yummly.search('Onion soup')
+    result.total # returns 10
 
 #### Find
 
 The find command returns a single Yummly::Recipe object:
 
-    Yummly.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
+    recipe = Yummly.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
+    recipe.name # returns "French Onion Soup"
 
 ## The Recipe object
 
