@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Theo Mills"]
   gem.email         = ["twmills@twmills.com"]
   gem.description   = %q{Ruby wrapper to the Yummly API}
-  gem.summary       = %q{Ruby wrapper to the Yummly API}
+  gem.summary       = "This is the unofficial ruby wrapper to the Yummly API, \"the world's largest and most powerful recipe search site\""
   gem.homepage      = "https://github.com/twmills/yummly"
 
   gem.files         = `git ls-files`.split($/)
