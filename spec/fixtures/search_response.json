@@ -1,6 +1,6 @@
 {
     "attribution": {
-        "html": "&lt;a href='http://www.yummly.com/recipes/soup'&gt;soup recipes&lt;/a&gt; search powered by &lt;img src=''/&gt;",
+        "html": "<a href='http://www.yummly.com/recipes/soup'>soup recipes</a> search powered by <img src=''/>",
         "url": "http://www.yummly.com/recipes/soup",
         "text": "soup recipes: search powered by Yummly",
         "logo": ""
@@ -1183,7 +1183,7 @@
                 "salt",
                 "coriander root"
             ],
-            "recipeName": "Hot &amp; Sour Tom Yum Soup"
+            "recipeName": "Hot & Sour Tom Yum Soup"
         },
         {
             "attributes": {
