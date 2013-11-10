@@ -1,7 +1,6 @@
 require "spec_helper"
 
 describe Yummly do
-  subject { Yummly::Configuration.new }
 
   describe ".configure" do
     let(:app_id) { ENV['YUMMLY_APP_ID'] || "12345" }

@@ -1,10 +1,11 @@
 require "spec_helper"
 
 describe Yummly::UrlBuilder do
-  subject { Yummly::Configuration.new }
+
   let(:ssl) { false }
   let(:app_id) { "123456" }
   let(:app_key) { "ABCDEFG123456" }
+
   before do
     Yummly.configure do |config|
       config.use_ssl = ssl
