@@ -7,10 +7,10 @@ module Yummly
 
     include Enumerable
 
-    attr_accessor :response, :params, :max_result, :start
+    attr_accessor :json, :params, :max_result, :start
 
-    def initialize(response)
-      @response = response
+    def initialize(json)
+      @json = json
     end
 
     def each(&block)
@@ -22,20 +22,20 @@ module Yummly
     end
 
     def matches
-      response["matches"] || []
+      json["matches"] || []
     end
 
     def total_match_count
-      response["totalMatchCount"]
+      json["totalMatchCount"]
     end
     alias_method :total, :total_match_count
 
     def attribution
-      Yummly::Attribution.new(response["attribution"])
+      Yummly::Attribution.new(json["attribution"])
     end
 
     def criteria
-      response["criteria"]
+      json["criteria"]
     end
 
   end
