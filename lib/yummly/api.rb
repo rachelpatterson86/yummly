@@ -18,7 +18,7 @@ module Yummly
     #   recipe = Yummly::Api.find('French-Onion-Soup-The-Pioneer-Woman-Cooks-_-Ree-Drummond-41364')
     def self.find(id)
       recipe_json = Yummly::Connection.get("recipe/#{id}")
-      Yummly::Recipe.new(recipe_json)
+      recipe_json.nil? ? nil : Yummly::Recipe.new(recipe_json)
     end
 
     # Searches for recipes that match the supplied search terms.
