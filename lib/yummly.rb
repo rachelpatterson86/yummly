@@ -40,8 +40,6 @@ module Yummly
   end
 
   class Error < StandardError; end
-  class NotFoundError < Error; end
   class PermissionError < Error; end
-  class NotImplementedError < Error; end
   class InternalServerError < Error; end
 end
