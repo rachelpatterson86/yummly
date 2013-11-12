@@ -67,7 +67,7 @@ For example, to access the thumbnail image for a recipe:
 
 Explore the Yummly::Recipe class to see the full range of available attributes.
 
-#### Errors
+## Errors
 
 The yummly gem handles the API's errors by raising the following errors:
 
