@@ -69,7 +69,7 @@ Explore the Yummly::Recipe class to see the full range of available attributes.
 
 ## Errors
 
-The yummly gem handles the API's errors by raising the following errors:
+The yummly gem handles the API's exceptions by raising the following errors:
 
 * **Yummly::PermissionError** - When your credentials are incorrect or you've exceeded the rate limit.
 * **Yummly::InternalServerError** - When something's gone wrong on Yummly's servers
