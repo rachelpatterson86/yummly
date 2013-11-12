@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/repos/51b73d4a13d6371539009033/badges/9791fe90f214cf14a27b/gpa.png)](https://codeclimate.com/repos/51b73d4a13d6371539009033/feed)
+
 # Yummly
 
 This is the unofficial ruby wrapper to the Yummly API, "the world's largest and most powerful recipe search site".
