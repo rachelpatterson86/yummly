@@ -4,8 +4,6 @@ This is the unofficial ruby wrapper to the Yummly API, "the world's largest and 
 
 https://developer.yummly.com/
 
-Still in the baking phase. Tests are being written, lots of churn at the moment.
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -24,6 +22,7 @@ Or install it yourself as:
 
 First, configure Yummly with your APP key and ID, for example in an initializer if you're using Rails:
 
+    # config/initializers/yummly.rb
     Yummly.configure do |config|
       config.app_id = "21334"
       config.app_key = "XXXXXXXXXXXXXXXXX"
@@ -67,6 +66,18 @@ For example, to access the thumbnail image for a recipe:
 (Shhhh, there's also a Recipe#thumbnail convenience method!)
 
 Explore the Yummly::Recipe class to see the full range of available attributes.
+
+#### Errors
+
+The yummly gem handles the API's errors by raising the following errors:
+
+* **Yummly::PermissionError** - When your credentials are incorrect or you've exceeded the rate limit.
+* **Yummly::InternalServerError** - When something's gone wrong on Yummly's servers
+* **Yummly::Error** - Any other unexpected error that is returned.
+
+_**Note:** There had been some discussion about raising an exception when a 404 is encountered, i.e. when a recipe doesn't
+exist for a given ID. Currently the find call returns nil if a recipe cannot be found, but I may raise a new error in
+the future if this is considered a truly exceptional case._
 
 ## Contributing
 
