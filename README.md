@@ -1,4 +1,5 @@
 [![Code Climate](https://codeclimate.com/repos/51b73d4a13d6371539009033/badges/9791fe90f214cf14a27b/gpa.png)](https://codeclimate.com/repos/51b73d4a13d6371539009033/feed)
+[![Build Status](https://travis-ci.org/twmills/yummly.png?branch=master)](https://travis-ci.org/twmills/yummly)
 
 # Yummly
 
