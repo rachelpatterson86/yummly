@@ -7,6 +7,7 @@ Gem::Specification.new do |gem|
   gem.name          = "yummly"
   gem.version       = Yummly::VERSION
   gem.authors       = ["Theo Mills"]
+  gem.license       = 'MIT'
   gem.email         = ["twmills@twmills.com"]
   gem.description   = %q{Ruby wrapper to the Yummly API}
   gem.summary       = "This is the unofficial ruby wrapper to the Yummly API, \"the world's largest and most powerful recipe search site\""
