@@ -38,7 +38,7 @@ module Yummly
     #allowedIngredient[] params for recipe searches.
     def self.ingredient
       list = Yummly::Connection.get("ingredient")
-      Yummly::Dictionary.new(list)
+      Yummly::Ingredient.new(list)
     end
 
     #access searchValues of metadata dictionary for allowedAllergy[]

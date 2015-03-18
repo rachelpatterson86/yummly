@@ -1,6 +1,6 @@
 # Contains details about the origin of the recipe.
 module Yummly
-  class Dictionary
+  class Ingredient
 
     # # The original source url of this recipe.
     # attr_accessor :recipe_url
