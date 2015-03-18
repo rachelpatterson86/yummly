@@ -37,21 +37,21 @@ module Yummly
     #access searchValues of metadata dictionary for excludedIngredient[] &
     #allowedIngredient[] params for recipe searches.
     def self.ingredient
-      list = Yummly::Connection.get("ingredient")
+      list = Yummly::Connection.get("metadata/ingredient")
       Yummly::Ingredient.new(list)
     end
 
     #access searchValues of metadata dictionary for allowedAllergy[]
     #params for recipe searches.
     def self.allergy
-      list = Yummly::Connection.get("allergy")
+      list = Yummly::Connection.get("metadata/allergy")
       Yummly::Allergy.new(list)
     end
 
     #access searchValues of metadata dictionary for allowedDiet[]
     #params for recipe searches.
     def self.diet
-      list = Yummly::Connection.get("diet")
+      list = Yummly::Connection.get("metadata/diet")
       Yummly::Diet.new(list)
     end
 
