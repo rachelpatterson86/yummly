@@ -1,6 +1,6 @@
 # Contains details about the origin of the recipe.
 module Yummly
-  class Ingredient
+  class Diet
 
     attr_accessor :json
 
