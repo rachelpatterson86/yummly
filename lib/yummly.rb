@@ -37,6 +37,20 @@ module Yummly
     def find(recipe_id)
       Yummly::Api.find(recipe_id)
     end
+
+    def ingredient
+      Yummly::Api.ingredient
+    end
+
+    def self.allergy
+      Yummly::Api.allergy
+    end
+
+    def self.diet
+      Yummly::Api.diet
+    end
+
+
   end
 
   class Error < StandardError; end
