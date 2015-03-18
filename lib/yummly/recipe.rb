@@ -35,6 +35,11 @@ module Yummly
       @flavor ||= Yummly::Flavor.new(json["flavors"])
     end
 
+    # @return [Yummly::Source] collection of Yummly::Source objects.
+    def source
+      @source = Yummly::Source.new(json["source"])
+    end
+
     # @return [String] the Yummly id for this recipe.
     def id
       json["id"]
